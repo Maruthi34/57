@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 200px 1fr;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            grid-area: nav;
+        }
+        main {
+            padding: 1rem;
+            grid-area: main;
+        }
+        footer {
+            grid-area: footer;
+        }
+        @media (max-width: 800px) {
+            body {
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr auto;
+            }
+            nav {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Sidebar Navigation</h1>
+    </header>
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Main Content</h2>
+        <p>This is the main content area. Resize the browser window to see the sidebar transition to a top navigation bar.</p>
+    </main>
+    <footer>
+        &copy; 2024 Responsive Design
+    </footer>
+</body>
+</html>
